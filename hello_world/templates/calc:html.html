@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
+
+</head>
+<body>
+
+
+
+
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+  <h1>Herzlich willkommen zum Rechner</h1>
+
+  <form method="post">
+    <label for="fname">Erste Zahl:</label><br>
+    <input id="fname" name="zahl_0"><br>
+
+    <label for="lname">Zweite Zahl:</label><br>
+    <input id="lname" name="zahl_1"><br><br>
+
+
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+
+  {% if ergebnis %}
+    <br>
+    <a>Das Ergebnis lautet: {{ergebnis}}!</a>
+  {% endif %}
+
+
+
+
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% include "header.jinja" %}
+
+  <body class="bg-light">
+
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://images.unsplash.com/photo-1617286931389-9082553de6be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="" width="auto" height="200">
+      <h2>Spielerliste</h2>
+      <p class="lead">Trage hier sämltiche Mitspieler ein, welche am Spiel teilnehmen möchten.</p>
+    </div>
+
+
+
+
+
+      <div class="col-md-8 col-lg-9">
+        <h4 class="mb-3">Mitspieler hinzufügen</h4>
+        <form class="needs-validation" novalidate method="POST">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstname" class="form-label">Vorname</label>
+              <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Name eingeben" value="" required>
+              <div class="invalid-feedback">
+                Dein Vorname wird benötigt.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastname" class="form-label">Nachname</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Name eingeben" value="" required>
+              <div class="invalid-feedback">
+                Dein Nachname wird benötigt.
+              </div>
+            </div>
+
+
+
+
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Spieler hinzufügen</button>
+
+
+          <button class="href=/ w-100 btn btn-success btn-lg" type="submit">Spiel starten</button>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2022 Spielrechner</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+
+{% include "footer.jinja" %}
