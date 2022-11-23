@@ -1,0 +1,28 @@
+{% include "header.jinja" %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Spieler hinzufügen</h1>
+    <p class="lead">Gib hier die Namen deiner Mitspieler ein, um das Spiel zu starten.</p>
+  </div>
+    </div>
+
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="real_name">Name des Mitspielers</label>
+        <input type="text" class="form-control" id="real_name" name="real_name" placeholder="Vor- und Nachname eingeben">
+      </div>
+        <br>
+      <div class="form-group">
+        <label for="player_name">Spielername</label>
+        <input type="text" class="form-control" id="player_name" name="player_name" placeholder="Spielername eingeben">
+      </div>
+        <br>
+      <button type="submit" class="btn btn-primary">Nächster Spieler hinzufügen</button>
+        <button type="submit" class="btn btn-success">Spiel starten</button>
+
+    </form>
+
+{% include "footer.jinja" %}
