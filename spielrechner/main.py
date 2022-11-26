@@ -1,11 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import plotly.express as px
-from plotly.offline import plot
 
-from Spielrechner.datenbank import abspeichern, auslesen
-
+from spielrechner.datenbank import auslesen, abspeichern, spielers_laden
 
 app = Flask("Jassen")
 
@@ -26,9 +23,29 @@ def add_player():
         print(f"Request Form real_name: {real_name}")
         print(f"Request Form player_name: {player_name}")
         abspeichern(real_name, player_name)
-        return "funktioniert"
+        return render_template("add_player.html", seitentitel="Spieler hinzufügen")
 
+
+@app.route("/mitspieler")
+def new():
+    spielers = spielers_laden()
+    return render_template("mitspieler.html", liste=spielers, seitentitel="mitspieler")
+
+    spielers = auslesen()
+    mitspieler.html = spielers.replace("\n", "<br>")
+    spieler_liste = spielers.split("\n")
+    neue_liste = []
+    for spieler in spieler_liste:
+        real_name, player_name = spieler.split(",")
+        neue_liste.append([real_name, player_name])
+    print(neue_liste)
+    return render_template("mitspieler.html", liste=neue_liste)
+
+
+@app.route("/vergangenheit")
+def past_games():
+    return render_template("past_games.html", seitentitel="vergangene")
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5008)
+    app.run(debug=True, port=5007)
