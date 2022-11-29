@@ -1,0 +1,57 @@
+{
+  "2022-11-29 10:05:56.216741": {
+    "mitspieler": {
+      "Franz": {
+        "punkte": 4,
+        "anzahl_spiele": 2
+      },
+      "Markus": {
+        "punkte": 4,
+        "anzahl_spiele": 2
+      }
+    }
+  },
+  "2022-11-29 10:12:25.297729": {
+    "mitspieler": {
+      "Franz": {
+        "punkte": 4,
+        "anzahl_spiele": 2
+      },
+      "Markus": {
+        "punkte": 4,
+        "anzahl_spiele": 2
+      }
+    }
+  }
+}
+
+games["2022-11-29 10:05:56.216741"]["mitspieler"]["Markus"]
+games["2022-11-29 10:05:56.216741"]["mitspieler"]["Markus"]["punkte"] = 6
+games["2022-11-29 10:05:56.216741"]["mitspieler"]["Thomas"] = {"punkte": 0, "anzahl_spiele": 0 }
+
+current_game_key = sorted(list(games.keys()))[0]
+
+
+from datetime import datetime
+timestamp = str(datetime.now())
+games = load_games()
+games[timestamp] = {
+  "mitspieler": {}
+}
+
+
+ andere funktion
+games = load_games()
+current_game_key = sorted(list(games.keys()))[0]
+players = list(games[current_game_key]["mitspieler"].keys())
+
+games[current_game_key]["mitspieler"][name] = {
+  "punkte": 0,
+  "anzahl_spiele": 0
+}
+
+
+
+
+
+

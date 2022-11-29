@@ -25,4 +25,13 @@
 
     </form>
 
+{% if players %}
+<div>
+<h2>Mitspieler:</h2>
+{% for player in players %}
+  <a>{{ player }}</a><br>
+{% endfor %}
+{% endif %}
+  </div>
+
 {% include "footer.jinja" %}

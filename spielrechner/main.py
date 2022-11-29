@@ -15,7 +15,9 @@ def start():
 @app.route("/add_player", methods=["GET", "POST"])
 def add_player():
     if request.method == "GET":
-        return render_template("add_player.html", seitentitel="Spieler hinzufügen")
+        players = ["Thomas", "Brunhilde"]
+        players = []
+        return render_template("add_player.html", seitentitel="Spieler hinzufügen", players=players)
 
     if request.method == "POST":
         real_name = request.form['real_name']
