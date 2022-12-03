@@ -1,16 +1,20 @@
 {% include "header.jinja" %}
 
-
 <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Willkommen beim Spielerechner 5000</h1>
-        <p class="lead">Hier kannst du schnell und einfach die Punkte deiner letzten UNO-Runde, Jasspartie oder Dog-Spiel
-        erfassen, dem gewünschten Spieler hinzufügen und so die Übersicht mit Analyse über die vergangenen
-        Spielrunden einsehen. Viel Spass!</p>
+        <h1 class="display-4 fw-bold lh-1">Spiel beginnen</h1>
+        <p class="lead">Wie soll das Spiel heissen?</p>
+    <form method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" name="spielname" placeholder="Spielname">
+      </div>
+        <br>
+      <button type="submit" class="btn btn-primary">Weiter zu Spieler hinzufügen</button>
+    </form>
+        <br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <a href="{{ url_for('spiel_speichern') }}" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Neues Spiel</a>
-          <a href="#" type="button" class="btn btn-outline-secondary btn-lg px-4">Statistik</a>
 
         </div>
       </div>
@@ -19,6 +23,5 @@
       </div>
     </div>
   </div>
-
 
 {% include "footer.jinja" %}

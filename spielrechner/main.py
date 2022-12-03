@@ -1,8 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-
-from spielrechner.datenbank import auslesen, abspeichern, spielers_laden
+import daten
 
 app = Flask("Jassen")
 
@@ -12,42 +11,39 @@ def start():
     return render_template("index.html", seitentitel="Start")
 
 
-@app.route("/add_player", methods=["GET", "POST"])
-def add_player():
-    if request.method == "GET":
-        players = ["Thomas", "Brunhilde"]
-        players = []
-        return render_template("add_player.html", seitentitel="Spieler hinzufügen", players=players)
+@app.route("/spiel_beginnen/", methods=['GET', 'POST'])
+def spiel_speichern():
+    if request.method == 'POST':
+        spielname = request.form['spielname']
+        zeitpunkt, spielname = daten.spiel_speichern(spielname)
+        rueckgabe_string = "Gespeichert: " + spielname + " um " + str(zeitpunkt)
+        return rueckgabe_string
 
-    if request.method == "POST":
-        real_name = request.form['real_name']
-        player_name = request.form['player_name']
-        print(f"Request Form real_name: {real_name}")
-        print(f"Request Form player_name: {player_name}")
-        abspeichern(real_name, player_name)
-        return render_template("add_player.html", seitentitel="Spieler hinzufügen")
+    return render_template("add_game.html")
 
 
-@app.route("/mitspieler")
-def new():
-    spielers = spielers_laden()
-    return render_template("mitspieler.html", liste=spielers, seitentitel="mitspieler")
+@app.route("/spieler_hinzufügen/", methods=['GET', 'POST'])
+def mitspieler_speichern():
+    if request.method == 'POST':
+        spielername = request.form['spielername']
+        zeitpunkt, spielername = daten.mitspieler_speichern(spielername)
+        rueckgabe_mitspieler = "Gespeichert: " + spielername + " um " + str(zeitpunkt)
+        return rueckgabe_mitspieler
 
-    spielers = auslesen()
-    mitspieler.html = spielers.replace("\n", "<br>")
-    spieler_liste = spielers.split("\n")
-    neue_liste = []
-    for spieler in spieler_liste:
-        real_name, player_name = spieler.split(",")
-        neue_liste.append([real_name, player_name])
-    print(neue_liste)
-    return render_template("mitspieler.html", liste=neue_liste)
+    return render_template("add_player.html")
 
 
-@app.route("/vergangenheit")
-def past_games():
-    return render_template("past_games.html", seitentitel="vergangene")
+@app.route("/liste")
+def auflisten():
+    spielname = daten.spielenamen_laden()
+
+    spielname_liste = ""
+    for key, value in spielname.items():
+        zeile = str(key) + ": " + value + "<br>"
+        spielname_liste += zeile
+
+    return render_template("mitspieler.html", liste=spielname_liste)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5007)
+    app.run(debug=True, port=5006)
