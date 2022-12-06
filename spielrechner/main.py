@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 import daten
@@ -16,34 +16,50 @@ def spiel_speichern():
     if request.method == 'POST':
         spielname = request.form['spielname']
         zeitpunkt, spielname = daten.spiel_speichern(spielname)
-        rueckgabe_string = "Gespeichert: " + spielname + " um " + str(zeitpunkt)
-        return rueckgabe_string
+        return redirect(url_for("mitspieler_speichern", game_id=zeitpunkt))
 
-    return render_template("add_game.html")
+    return render_template("add_game.html", seitentitel="Spiel hinzufügen")
 
 
 @app.route("/spieler_hinzufügen/", methods=['GET', 'POST'])
-def mitspieler_speichern():
+@app.route("/spieler_hinzufügen/<game_id>", methods=['GET', 'POST'])
+def mitspieler_speichern(game_id=None):
+    if not game_id:
+        return redirect(url_for("spiel_speichern"))
+    spiele = daten.spiele_laden()
+    print(spiele)
+    aktuelles_spiel = spiele[game_id]
+    if request.method == "GET":
+
+
+        print(aktuelles_spiel)
+        aktuelle_spieler = aktuelles_spiel["mitspieler"].keys()
+        for spieler in aktuelle_spieler:
+            print(aktuelles_spiel["mitspieler"][spieler])
+        return render_template("add_player.html", seitentitel="Spieler hinzufügen")
+
     if request.method == 'POST':
         spielername = request.form['spielername']
+        aktuelles_spiel["mitspieler"]['spielername'] = {
+            "punkte"
+        }
         zeitpunkt, spielername = daten.mitspieler_speichern(spielername)
-        rueckgabe_mitspieler = "Gespeichert: " + spielername + " um " + str(zeitpunkt)
-        return rueckgabe_mitspieler
+        return "nope"
 
-    return render_template("add_player.html")
+
 
 
 @app.route("/liste")
 def auflisten():
-    spielname = daten.spielenamen_laden()
+    spielname = daten.spiele_laden()
 
-    spielname_liste = ""
+    spielname_liste = []
     for key, value in spielname.items():
-        zeile = str(key) + ": " + value + "<br>"
-        spielname_liste += zeile
+        zeile = str(key) + ": " + str(value) + "<br>"
+        spielname_liste.append(zeile)
 
     return render_template("mitspieler.html", liste=spielname_liste)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5006)
+    app.run(debug=True, port=5005)

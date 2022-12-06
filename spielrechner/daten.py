@@ -14,17 +14,27 @@ def speichern(datei, key, value):
     # print(datei_inhalt)
 
     with open(datei, "w") as open_file:
-        json.dump(datei_inhalt, open_file)
+        json.dump(datei_inhalt, open_file, indent=4)
 
 
 def spiel_speichern(spielname):
     datei_name = "spielenamen.json"
     zeitpunkt = datetime.now()
-    speichern(datei_name, zeitpunkt, spielname)
+    spieldaten = {
+        "name": spielname,
+        "mitspieler": {}
+    }
+    speichern(datei_name, zeitpunkt, spieldaten)
     return zeitpunkt, spielname
 
 
-def spielenamen_laden():
+def mitspieler_speichern(spielername):
+    datei_name = "spielenamen.json"
+    speichern(datei_name, zeitpunkt, spielername)
+    return zeitpunkt, spielername
+
+
+def spiele_laden():
     datei_name = "spielenamen.json"
 
     try:
@@ -34,11 +44,3 @@ def spielenamen_laden():
         datei_inhalt = {}
 
     return datei_inhalt
-
-
-
-def mitspieler_speichern(spielername):
-    datei_name = "mitspieler.json"
-    zeitpunkt = datetime.now()
-    speichern(datei_name, zeitpunkt, spielername)
-    return zeitpunkt, spielername
