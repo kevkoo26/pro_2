@@ -22,16 +22,31 @@ def spiel_speichern(spielname):
     zeitpunkt = datetime.now()
     spieldaten = {
         "name": spielname,
-        "mitspieler": {}
+        "mitspieler": {
+            "spielername": {
+                "Punkte": {},
+                "Anzahl_Spiele": {}
+            }
+        }
     }
     speichern(datei_name, zeitpunkt, spieldaten)
     return zeitpunkt, spielname
 
 
-def mitspieler_speichern(spielername):
+def mitspieler_speichern(spielername, spielname):
     datei_name = "spielenamen.json"
-    speichern(datei_name, zeitpunkt, spielername)
-    return zeitpunkt, spielername
+    zeitpunkt = datetime.now()
+    spieldaten = {
+        "name": spielname,
+        "mitspieler": {
+            spielername: {
+                "Punkte": {},
+                "Anzahl_Spiele": {}
+            }
+        }
+    }
+    speichern(datei_name, zeitpunkt, spieldaten)
+    return zeitpunkt, spielname, spielername
 
 
 def spiele_laden():

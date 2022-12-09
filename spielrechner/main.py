@@ -2,6 +2,9 @@ from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 import daten
+import plotly.express as px
+from plotly.offline import plot
+
 
 app = Flask("Jassen")
 
@@ -31,7 +34,6 @@ def mitspieler_speichern(game_id=None):
     aktuelles_spiel = spiele[game_id]
     if request.method == "GET":
 
-
         print(aktuelles_spiel)
         aktuelle_spieler = aktuelles_spiel["mitspieler"].keys()
         for spieler in aktuelle_spieler:
@@ -40,13 +42,25 @@ def mitspieler_speichern(game_id=None):
 
     if request.method == 'POST':
         spielername = request.form['spielername']
-        aktuelles_spiel["mitspieler"]['spielername'] = {
-            "punkte"
-        }
-        zeitpunkt, spielername = daten.mitspieler_speichern(spielername)
+        aktuelles_spiel["mitspieler"] = spielername
+        spielername, spielname, aktuelles_spiel = daten.mitspieler_speichern(spielername, spielname)
         return "nope"
 
 
+@app.route("/punkterechner")
+def punkterechner():
+    return render_template("punkterechner.html", seitentitel="Punkterechner")
+
+
+@app.route("/statistik")
+def statistik():
+    x = "Markus", "Hans", "Lisa", "Kevin", "Sarah", "Linda"
+    y = 5, 4, 9, 13, 1, 7
+
+    fig = px.bar(x=x, y=y)
+    div = plot(fig, output_type="div")
+
+    return render_template("statistic.html", barchart=div, seitentitel="Statistik")
 
 
 @app.route("/liste")
@@ -58,8 +72,8 @@ def auflisten():
         zeile = str(key) + ": " + str(value) + "<br>"
         spielname_liste.append(zeile)
 
-    return render_template("mitspieler.html", liste=spielname_liste)
+    return render_template("spielerliste.html", liste=spielname_liste)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5005)
+    app.run(debug=True, port=5006)
