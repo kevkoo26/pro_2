@@ -1,0 +1,22 @@
+{% include "header.jinja" %}
+
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Tat oder Wahrheit?</h1>
+          <p class="lead text-muted">Mit welchem der Zwei möchtest du das Spiel beginnen? Möchtest du eine knifflige und vielleicht
+          schwierige Aufgabe, welche du erledigen musst? Oder wählst du lieber den Weg einer unbekannten Frage, bei welcher du
+          etwas über dich preisgeben musst?</p>
+          <p>
+          <a href="{{ url_for('tat') }}">
+            <button type="button" class="btn btn-lg btn-danger my-3 w-100 mx-0" data-bs-dismiss="modal">Tat</button>
+          </a>
+         <br>
+          <a href="{{ url_for('wahrheit') }}">
+            <button type="button" class="btn btn-lg btn-success my-3 w-100 mx-0" data-bs-dismiss="modal">Wahrheit</button>
+        </div>
+      </section>
+
+
+
+
+{% include "footer.jinja" %}

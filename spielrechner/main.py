@@ -5,7 +5,7 @@ import daten
 import plotly.express as px
 from plotly.offline import plot
 
-from spielrechner.daten import abspeichern
+from spielrechner.daten import abspeichern_tat, abspeichern_wahrheit
 
 app = Flask("Jassen")
 
@@ -13,6 +13,11 @@ app = Flask("Jassen")
 @app.route("/")
 def start():
     return render_template("index.html", seitentitel="Start")
+
+
+@app.route("/tat_oder_wahrheit")
+def spiel_beginnen():
+    return render_template("tat_oder_wahrheit.html", seitentitel="Tat oder Wahrheit")
 
 
 @app.route("/spiel_beginnen/", methods=['GET', 'POST'])
@@ -83,8 +88,26 @@ def tat_hinzufügen():
     if request.method == 'POST':
         eigene_tat = request.form['tat_hinzufügen']
         print(f"Request Form Tat hinzufügen: {eigene_tat}")
-        abspeichern(eigene_tat)
+        abspeichern_tat(eigene_tat)
         return redirect(url_for("tat_hinzufügen"))
+
+
+@app.route("/wahrheit")
+def wahrheit():
+    wahrheiten = daten.wahrheiten_laden()
+    return render_template("wahrheit.html", liste=wahrheiten, seitentitel="wahrheit")
+
+
+@app.route("/wahrheit_hinzufügen/", methods=['GET', 'POST'])
+def wahrheit_hinzufügen():
+    if request.method == "GET":
+        return render_template("wahrheit_hinzufügen.html", seitentitel="Wahrheit eingeben")
+
+    if request.method == 'POST':
+        eigene_wahrheit = request.form['wahrheit_hinzufügen']
+        print(f"Request Form Wahrheit hinzufügen: {eigene_wahrheit}")
+        abspeichern_wahrheit(eigene_wahrheit)
+        return redirect(url_for("wahrheit_hinzufügen"))
 
 
 @app.route("/liste")
