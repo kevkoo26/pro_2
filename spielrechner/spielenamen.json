@@ -23,142 +23,53 @@
             }
         }
     },
-    "2022-12-06 11:16:26.485084": {
-        "name": "Uno",
-        "mitspieler": {}
-    },
-    "2022-12-06 11:20:35.297914": {
-        "name": "fgsdfg",
-        "mitspieler": {}
-    },
-    "2022-12-06 11:23:19.691519": {
-        "name": "Jassen2",
-        "mitspieler": {}
-    },
-    "2022-12-06 11:24:39.674807": {
-        "name": "asdf",
-        "mitspieler": {}
-    },
-    "2022-12-06 11:26:41.576086": {
-        "name": "dfgh",
-        "mitspieler": {}
-    },
-    "2022-12-06 11:45:51.767516": {
-        "name": "sadfasf",
-        "mitspieler": {}
-    },
-    "2022-12-07 09:42:14.066509": {
-        "name": "fghj",
-        "mitspieler": {}
-    },
-    "2022-12-07 09:42:30.997600": {
-        "name": "3546",
-        "mitspieler": {}
-    },
-    "2022-12-07 10:28:50.757595": {
-        "name": "Test5",
-        "mitspieler": {}
-    },
-    "2022-12-07 11:01:46.270591": {
-        "name": "sdfg",
-        "mitspieler": {}
-    },
-    "2022-12-07 11:02:37.621641": {
-        "name": "sdgfsdf",
-        "mitspieler": {}
-    },
-    "2022-12-07 11:09:38.655501": {
-        "name": "dfghd",
-        "mitspieler": {}
-    },
-    "2022-12-07 11:11:38.337149": {
-        "name": "dsfg",
+    "2022-12-13 10:46:58.236136": {
+        "name": "sd",
         "mitspieler": {
-            "Spielername": {
+            "spielername": {
                 "Punkte": {},
                 "Anzahl_Spiele": {}
             }
         }
     },
-    "2022-12-07 11:41:06.842309": {
-        "name": "sdfgs",
+    "2022-12-13 11:27:59.872029": {
+        "name": "sgg",
         "mitspieler": {
-            "Spielername": {
+            "spielername": {
                 "Punkte": {},
                 "Anzahl_Spiele": {}
             }
         }
     },
-    "2022-12-07 11:42:15.914756": {
-        "name": "asdf",
+    "2022-12-13 11:28:37.804676": {
+        "name": "ttt",
         "mitspieler": {
-            "Spielername": {
+            "spielername": {
                 "Punkte": {},
                 "Anzahl_Spiele": {}
             }
         }
     },
-    "Spielername": "Kevin",
-    "2022-12-07 11:43:20.258408": {
+    "2022-12-13 11:28:57.120208": {
+        "name": "ag",
+        "mitspieler": {
+            "spielername": {
+                "Punkte": {},
+                "Anzahl_Spiele": {}
+            }
+        }
+    },
+    "2022-12-13 11:31:14.980962": {
         "name": "Uno",
         "mitspieler": {
-            "Spielername": {
+            "spielername": {
                 "Punkte": {},
                 "Anzahl_Spiele": {}
             }
         }
     },
-    "2022-12-07 11:45:46.312186": {
-        "name": "sdfg",
-        "mitspieler": {
-            "Spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "{'name': {}, 'mitspieler': {'asdf': {'Punkte': {}, 'Anzahl_Spiele': {}}}}": "asdf",
-    "2022-12-07 11:46:26.295674": {
-        "name": "uno2",
-        "mitspieler": {
-            "Spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "{'name': {}, 'mitspieler': {'Kevin3': {'Punkte': {}, 'Anzahl_Spiele': {}}}}": "Kevin3",
-    "2022-12-07 11:53:44.968136": {
-        "name": "dfsg",
-        "mitspieler": {
-            "Spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 11:56:37.736554": {
-        "name": "sdfgs",
-        "mitspieler": {
-            "Spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "{'name': {}, 'mitspieler': {'sdfgdsfg': {'Punkte': {}, 'Anzahl_Spiele': {}}}}": "sdfgdsfg",
-    "2022-12-07 17:45:58.337020": {
-        "name": "sdfgsdg",
-        "mitspieler": {
-            "Spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "{'name': {}, 'mitspieler': {'sdfg': {'Punkte': {}, 'Anzahl_Spiele': {}}}}": "sdfg",
-    "2022-12-07 17:52:58.951219": {
-        "name": "sdfg",
+    "2022-12-13 11:31:52.463891": {
+        "name": "asdg",
         "mitspieler": {
             "spielername": {
                 "Punkte": {},
@@ -166,9 +77,8 @@
             }
         }
     },
-    "{'name': {}, 'mitspieler': {'spielername': {'Punkte': {}, 'Anzahl_Spiele': {}}}}": "dfg",
-    "2022-12-07 17:53:45.117665": {
-        "name": "sdg",
+    "2022-12-13 11:32:10.548526": {
+        "name": "kjhjk",
         "mitspieler": {
             "spielername": {
                 "Punkte": {},
@@ -176,89 +86,8 @@
             }
         }
     },
-    "2022-12-07 17:58:50.075643": {
-        "name": "dfhg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 17:59:56.773657": {
-        "name": "sdfg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:03:04.080945": {
-        "name": "asdf",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:03:36.796161": {
-        "name": "dsfg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:03:56.930518": {
-        "name": "sdfg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:04:50.881283": {
-        "name": "dsgf",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:05:12.523152": {
-        "name": "dfg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:05:55.014203": {
-        "name": "dfg",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-07 18:06:14.579922": {
-        "name": "rrrr",
-        "mitspieler": {
-            "spielername": {
-                "Punkte": {},
-                "Anzahl_Spiele": {}
-            }
-        }
-    },
-    "2022-12-09 17:16:31.167054": {
-        "name": "sdfgsdfg",
+    "2022-12-13 11:50:48.632794": {
+        "name": "kjhk",
         "mitspieler": {
             "spielername": {
                 "Punkte": {},

@@ -5,6 +5,7 @@ import daten
 import plotly.express as px
 from plotly.offline import plot
 
+from spielrechner.daten import abspeichern
 
 app = Flask("Jassen")
 
@@ -42,8 +43,7 @@ def mitspieler_speichern(game_id=None):
 
     if request.method == 'POST':
         spielername = request.form['spielername']
-        aktuelles_spiel["mitspieler"] = spielername
-        spielername, spielname, aktuelles_spiel = daten.mitspieler_speichern(spielername, spielname)
+        aktuelles_spiel["mitspieler"].keys() == spielername
         return "nope"
 
 
@@ -54,13 +54,37 @@ def punkterechner():
 
 @app.route("/statistik")
 def statistik():
+    spielname = daten.spiele_laden()
+
+    spielname_liste = []
+    for key, value in spielname.items():
+        zeile = "Spielzeitpunkt: " + str(key) + ": " + str(value)
+        spielname_liste.append(zeile)
+
     x = "Markus", "Hans", "Lisa", "Kevin", "Sarah", "Linda"
     y = 5, 4, 9, 13, 1, 7
-
     fig = px.bar(x=x, y=y)
     div = plot(fig, output_type="div")
 
     return render_template("statistic.html", barchart=div, seitentitel="Statistik")
+
+
+@app.route("/tat")
+def tat():
+    taten = daten.taten_laden()
+    return render_template("tat.html", liste=taten, seitentitel="tat")
+
+
+@app.route("/tat_hinzufügen/", methods=['GET', 'POST'])
+def tat_hinzufügen():
+    if request.method == "GET":
+        return render_template("tat_hinzufügen.html", seitentitel="Tat eingeben")
+
+    if request.method == 'POST':
+        eigene_tat = request.form['tat_hinzufügen']
+        print(f"Request Form Tat hinzufügen: {eigene_tat}")
+        abspeichern(eigene_tat)
+        return redirect(url_for("tat_hinzufügen"))
 
 
 @app.route("/liste")
@@ -69,8 +93,12 @@ def auflisten():
 
     spielname_liste = []
     for key, value in spielname.items():
-        zeile = str(key) + ": " + str(value) + "<br>"
+        zeile = "Spielzeitpunkt: " + str(key) + ": " + str(value)
         spielname_liste.append(zeile)
+        länge = len(spielname_liste)
+        print(länge)
+
+    print("Es wurden bereits", len(spielname_liste), "Spiele gespielt")
 
     return render_template("spielerliste.html", liste=spielname_liste)
 

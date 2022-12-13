@@ -11,6 +11,8 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
           <a href="{{ url_for('spiel_speichern') }}" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Neues Spiel</a>
           <a href="{{ url_for('statistik') }}" type="button" class="btn btn-outline-secondary btn-lg px-4">Statistik</a>
+          <a href="{{ url_for('tat') }}" type="button" class="btn btn-outline-secondary btn-lg px-4">Tat</a>
+
 
         </div>
       </div>
@@ -19,6 +21,18 @@
       </div>
     </div>
   </div>
+
+
+{% for eintrag in liste %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{eintrag [1] }}</h5>
+        <p class="card-text">{{eintrag [0] }}</p>
+    </div>
+</div>
+
+{% endfor %}
 
 
 {% include "footer.jinja" %}
