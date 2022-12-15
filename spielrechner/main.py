@@ -83,7 +83,8 @@ def tat():
 @app.route("/tat_hinzufügen/", methods=['GET', 'POST'])
 def tat_hinzufügen():
     if request.method == "GET":
-        return render_template("tat_hinzufügen.html", seitentitel="Tat eingeben")
+        auflistung = daten.taten_laden_liste()
+        return render_template("tat_hinzufügen.html", liste=auflistung, seitentitel="Tat eingeben")
 
     if request.method == 'POST':
         eigene_tat = request.form['tat_hinzufügen']
@@ -101,7 +102,8 @@ def wahrheit():
 @app.route("/wahrheit_hinzufügen/", methods=['GET', 'POST'])
 def wahrheit_hinzufügen():
     if request.method == "GET":
-        return render_template("wahrheit_hinzufügen.html", seitentitel="Wahrheit eingeben")
+        auflistung = daten.wahrheiten_laden_liste()
+        return render_template("wahrheit_hinzufügen.html", liste=auflistung, seitentitel="Wahrheit eingeben")
 
     if request.method == 'POST':
         eigene_wahrheit = request.form['wahrheit_hinzufügen']

@@ -23,6 +23,15 @@
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img src="https://images.unsplash.com/photo-1641842073407-500aac63708f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80" class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">
       </div>
+        <h2>
+            Aktuelle Liste der Taten:
+        </h2>
+        <br>
+        {% for eintrag in liste %}
+        <ul>
+            <li class="list-group-item">- {{eintrag}}</li>
+        </ul>
+        {% endfor %}
     </div>
   </div>
 

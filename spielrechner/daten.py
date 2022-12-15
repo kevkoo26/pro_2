@@ -70,6 +70,13 @@ def taten_laden():
     auswahl = random.choice(neue_liste)
     return auswahl
 
+def taten_laden_liste():
+    taten = auslesen_taten()
+    taten_liste = taten.split("\n")
+    taten_liste = reversed(taten_liste)
+    return taten_liste
+
+
 
 def abspeichern_tat(eigene_tat):
     current_content = auslesen_taten()
@@ -95,8 +102,15 @@ def wahrheiten_laden():
     return auswahl
 
 
+def wahrheiten_laden_liste():
+    wahrheiten = auslesen_wahrheiten()
+    wahrheiten_liste = wahrheiten.split("\n")
+    wahrheiten_liste = reversed(wahrheiten_liste)
+    return wahrheiten_liste
+
 def abspeichern_wahrheit(eigene_wahrheit):
     current_content = auslesen_wahrheiten()
     new_content = current_content + f"\n{eigene_wahrheit}"
     with open("wahrheiten.csv", "w") as open_file:
         open_file.write(new_content)
+
