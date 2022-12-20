@@ -1,7 +1,7 @@
 # Read Me - Projekt "Tat oder Wahrheit"
 
->* ## [Betrieb](README.md:17)
->* #### [Warum dieses Projekt ](README.md:18)
+>* ## Betrieb
+>* #### Warum dieses Projekt 
 >* #### Welches Problem löst das Projekt 
 >* #### Was macht das Projekt
 >* ## Benutzung
@@ -11,7 +11,7 @@
 >* #### Kurze Beschreibung des Ablaufs des Programms auf Code Ebene
 >* ## Ungelöste/unbearbeitete Probleme
 >* #### Was wurde nicht gelöst?
->* #### [Welche Verbesserungen könnten noch gemacht werden?](README.md:115)
+>* #### Welche Verbesserungen könnten noch gemacht werden?
 
 
 ## Betrieb
