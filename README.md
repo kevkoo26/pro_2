@@ -1,7 +1,7 @@
 # Read Me - Projekt "Tat oder Wahrheit"
 
->* ## Betrieb
->* #### Warum dieses Projekt 
+>* ## [Betrieb](README.md:17)
+>* #### [Warum dieses Projekt ](README.md:18)
 >* #### Welches Problem löst das Projekt 
 >* #### Was macht das Projekt
 >* ## Benutzung
@@ -11,7 +11,7 @@
 >* #### Kurze Beschreibung des Ablaufs des Programms auf Code Ebene
 >* ## Ungelöste/unbearbeitete Probleme
 >* #### Was wurde nicht gelöst?
->* #### Welche Verbesserungen könnten noch gemacht werden?
+>* #### [Welche Verbesserungen könnten noch gemacht werden?](README.md:115)
 
 
 ## Betrieb
@@ -68,7 +68,8 @@ Spiel eingeschlossen werden. Die Fragen oder Aufgaben kommen mit einer
 randon-Funktion, sprich, sie werden willkürlich ausgewählt. Somit weiss
 man nie, welche Aufgabe oder Frage als nächstes kommt und ob es vielleicht
 sogar eine eigene, hinzugefügte ist. 
-
+<br>
+<br>
 
 
 ## Architektur
@@ -93,7 +94,8 @@ sodass man immer sehen kann, welche Taten oder Wahrheiten bereits
 vorhanden sind. Die Liste wurde absichtlich in umgekehrter Reihenfolge
 angezeigt, damit man bei Eingabe einer eigenen Liste den neuen Inhalt
 zuoberst angezeigt erhält. 
-
+<br>
+<br>
 
 ## Ungelöste/unbearbeitete Probleme
 #### Was wurde nicht gelöst?
