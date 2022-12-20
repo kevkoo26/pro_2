@@ -1,15 +1,15 @@
 # Read Me - Projekt "Tat oder Wahrheit"
 
->* ## Betrieb
+>## Betrieb
 >* #### Warum dieses Projekt 
 >* #### Welches Problem löst das Projekt 
 >* #### Was macht das Projekt
->* ## Benutzung
+>## Benutzung
 >* #### Wie wird das Projekt benutzt
 >* #### Welche Optionen oder auch Spezialitäten existieren
->* ## Architektur
+>## Architektur
 >* #### Kurze Beschreibung des Ablaufs des Programms auf Code Ebene
->* ## Ungelöste/unbearbeitete Probleme
+>## Ungelöste/unbearbeitete Probleme
 >* #### Was wurde nicht gelöst?
 >* #### Welche Verbesserungen könnten noch gemacht werden?
 

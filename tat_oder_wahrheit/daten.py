@@ -1,6 +1,7 @@
 import random
 
 
+# taten auslesen lassen, nur "read"-Zugriff
 def auslesen_taten():
     with open("taten.csv", "r") as open_file:
         inhalt = open_file.read()
@@ -8,20 +9,21 @@ def auslesen_taten():
 
 
 def taten_laden():
-    taten = auslesen_taten()
-    taten_liste = taten.split("\n")
-    neue_liste = []
+    taten = auslesen_taten()  # Taten auslesen lassen und als "taten" speichern
+    taten_liste = taten.split("\n")  # taten werden bei einem Umbruch gesplittet und als Liste gespeichert
+    neue_liste = []  # eine neue Liste wird erstellt
     for eintrag in taten_liste:
-        tat = eintrag.split("\n")
-        neue_liste.append(tat)
-    auswahl = random.choice(neue_liste)
+        tat = eintrag.split("\n")  # alle Einträge in der taten_liste werden als gesamte Zeile bei einem neuen
+        # Zeilenumbruch gesplittet. Somit werden die Inhalte als ganze Sätze ausgegeben.
+        neue_liste.append(tat)  # die "ganzen" Sätze werden zur neuen, leeren Liste hinzugefügt.
+    auswahl = random.choice(neue_liste)  # durch die Random-Funktion wird ein zufälliger Satz ausgegeben
     return auswahl
 
 
 def taten_laden_liste():
     taten = auslesen_taten()
     taten_liste = taten.split("\n")
-    taten_liste = reversed(taten_liste)
+    taten_liste = reversed(taten_liste)  # Die Liste wird dadurch verkehrt ausgegeben, die neusten Inhalte ganz oben.
     return taten_liste
 
 
@@ -32,6 +34,7 @@ def abspeichern_tat(eigene_tat):
         open_file.write(new_content)
 
 
+# Wahrheiten auslesen lassen, nur "read"-Zugriff
 def auslesen_wahrheiten():
     with open("wahrheiten.csv", "r") as open_file:
         inhalt = open_file.read()

@@ -20,8 +20,6 @@ def spiel_beginnen():
     return render_template("tat_oder_wahrheit.html", seitentitel="Tat oder Wahrheit")
 
 
-
-
 @app.route("/statistik")
 def statistik():
     taten = daten.elements()
@@ -42,11 +40,11 @@ def tat():
 
 @app.route("/tat_hinzufügen/", methods=['GET', 'POST'])
 def tat_hinzufügen():
-    if request.method == "GET":
+    if request.method == "GET":  # eigene Taten, die hinzugefügt wurden, werden hier abgeholt und angezeigt in Liste.
         auflistung = daten.taten_laden_liste()
         return render_template("tat_hinzufügen.html", liste=auflistung, seitentitel="Tat eingeben")
 
-    if request.method == 'POST':
+    if request.method == 'POST':  # Formular, welches die eingegebenen Taten abholt --> Eingaben werden abgespeichert.
         eigene_tat = request.form['tat_hinzufügen']
         print(f"Request Form Tat hinzufügen: {eigene_tat}")
         abspeichern_tat(eigene_tat)
@@ -61,16 +59,15 @@ def wahrheit():
 
 @app.route("/wahrheit_hinzufügen/", methods=['GET', 'POST'])
 def wahrheit_hinzufügen():
-    if request.method == "GET":
+    if request.method == "GET":  # eigene Wahrheiten, die hinzugefügt wurden, werden hier abgeholt und angezeigt in Liste.
         auflistung = daten.wahrheiten_laden_liste()
         return render_template("wahrheit_hinzufügen.html", liste=auflistung, seitentitel="Wahrheit eingeben")
 
-    if request.method == 'POST':
+    if request.method == 'POST':  # Formular, welches die eingegebenen Wahrheiten abholt --> Eingaben werden abgespeichert.
         eigene_wahrheit = request.form['wahrheit_hinzufügen']
         print(f"Request Form Wahrheit hinzufügen: {eigene_wahrheit}")
         abspeichern_wahrheit(eigene_wahrheit)
         return redirect(url_for("wahrheit_hinzufügen"))
-
 
 
 @app.route("/viz")
@@ -78,7 +75,7 @@ def grafik():
     taten = daten.taten_laden_liste()
     inhalt = {}
     for tat in taten:
-        if tat [1] not in inhalt:
+        if tat[1] not in inhalt:
             inhalt[tat[1]] = 1
         else:
             inhalt[tat[1]] += 1
