@@ -1,5 +1,20 @@
 <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li><a href="{{ url_for('start') }}" class="nav-link px-2 text-muted">Start</a></li>
+        <li><a href="{{ url_for('spiel_beginnen') }}" class="nav-link px-2 text-muted">Spiel beginnen</a></li>
+        <li><a href="{{ url_for('tat_hinzufügen') }}" class="nav-link px-2 text-muted">Tat hinzufügen</a></li>
+        <li><a href="{{ url_for('wahrheit_hinzufügen') }}" class="nav-link px-2 text-muted">Wahrheit hinzufügen</a></li>
+        <li><a href="{{ url_for('grafik') }}" class="nav-link px-2 text-muted">Datenbank</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2023 Kevin Oetiker</p>
+  </footer>
+</div>
+
+
 </div>
 </body>
 </html>

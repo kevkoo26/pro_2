@@ -67,11 +67,6 @@ def abspeichern_wahrheit(eigene_wahrheit):
 
 
 def elements():
-    inhalt = auslesen_wahrheiten()
-    neue_liste = []
-    count = 0
-    for eintrag in inhalt:
-        wahrheit = eintrag.split("\n")
-        neue_liste.append(wahrheit)
-        count += 1
-    return str(count)
+    inhalt = wahrheiten_laden()
+    anzahl = len(inhalt)
+    return str(anzahl)

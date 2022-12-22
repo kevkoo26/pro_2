@@ -73,20 +73,21 @@ def wahrheit_hinzufügen():
 @app.route("/viz")
 def grafik():
     taten = daten.taten_laden_liste()
+    elements = daten.elements()
     inhalt = {}
     for tat in taten:
-        if tat[1] not in inhalt:
-            inhalt[tat[1]] = 1
+        if tat not in inhalt:
+            inhalt[tat] = 1
         else:
-            inhalt[tat[1]] += 1
+            inhalt[tat] += 1
 
-    x = inhalt.keys()
-    y = inhalt.values()
+    x = inhalt.values()
+    y = inhalt.keys()
 
     fig = px.bar(x=x, y=y)
     div = plot(fig, output_type="div")
 
-    return render_template("viz.html", barchart=div, seitentitel="Piechart")
+    return render_template("viz.html", barchart=div, liste=elements, seitentitel="Piechart")
 
 
 if __name__ == "__main__":
