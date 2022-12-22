@@ -84,10 +84,25 @@ def grafik():
     x = inhalt.values()
     y = inhalt.keys()
 
-    fig = px.bar(x=x, y=y)
+    fig = px.line(x=x, y=y)
     div = plot(fig, output_type="div")
 
-    return render_template("viz.html", barchart=div, liste=elements, seitentitel="Piechart")
+    wahrheiten = daten.wahrheiten_laden_liste()
+    elements2 = daten.elements()
+    inhalt2 = {}
+    for wahrheit in wahrheiten:
+        if wahrheit not in inhalt2:
+            inhalt2[wahrheit] = 1
+        else:
+            inhalt2[wahrheit] += 1
+
+    x = inhalt2.values()
+    y = inhalt2.keys()
+
+    fig = px.line(x=x, y=y)
+    div2 = plot(fig, output_type="div")
+
+    return render_template("viz.html", barchart=div, barchart2=div2, liste=elements, liste2=elements2, seitentitel="Piechart")
 
 
 if __name__ == "__main__":
