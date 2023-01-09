@@ -66,6 +66,7 @@ def abspeichern_wahrheit(eigene_wahrheit):
         open_file.write(new_content)
 
 
+# zum Zählen wie viele einzelne Taten oder Wahrheiten vorhanden sind.
 def elements():
     inhalt = wahrheiten_laden()
     anzahl = len(inhalt)

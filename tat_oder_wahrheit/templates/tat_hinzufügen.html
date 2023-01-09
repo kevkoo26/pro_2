@@ -7,7 +7,7 @@
         <h1 class="display-4 fw-bold lh-1">Tat hinzufügen</h1>
         <p class="lead">Wie lautet die Tat?</p>
     <form method="POST">
-      <div class="form-group">
+      <div class="form-group"> <!--Formular zum Hinzufügen einer neuen Tat-->
         <input type="text" class="form-control" name="tat_hinzufügen" placeholder="Tat hier eingeben">
       </div>
         <br>
@@ -26,7 +26,7 @@
         <h2>
             Aktuelle Liste der Taten:
         </h2>
-        <br> <!--Dank diesem "for eintrag in liste" wird die einzelne Tat angezeigt-->
+        <br> <!--Dank diesem "for eintrag in liste" werden die einzelnen Taten angezeigt-->
         {% for eintrag in liste %}
         <ul>
             <li class="list-group-item">- {{eintrag}}</li>

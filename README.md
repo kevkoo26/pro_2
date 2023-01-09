@@ -69,6 +69,10 @@ Spiel eingeschlossen werden. Die Fragen oder Aufgaben kommen mit einer
 randon-Funktion, sprich, sie werden willkürlich ausgewählt. Somit weiss
 man nie, welche Aufgabe oder Frage als nächstes kommt und ob es vielleicht
 sogar eine eigene, hinzugefügte ist. 
+
+Des weiteren verfügt das Programm über eine Funktion, über welche man erkennen kan, ob die neue Tat oder Wahrheit,
+welche man selbst hinzugefügt hat, bereits vorhanden ist. Sollte im Tab "Datenbank" der Balken bis zur Nummer 2 gelangen,
+so ist diese Tat oder Wahrheit doppelt vorhanden.
 <br>
 <br>
 
@@ -95,6 +99,9 @@ sodass man immer sehen kann, welche Taten oder Wahrheiten bereits
 vorhanden sind. Die Liste wurde absichtlich in umgekehrter Reihenfolge
 angezeigt, damit man bei Eingabe einer eigenen Liste den neuen Inhalt
 zuoberst angezeigt erhält. 
+
+Im Abschnitt Datenbank kann man zusätzlich kontrollieren, ob gewisse Taten oder Wahrheiten doppelt vorhanden sind.
+Dies funktioniert indem die Liste überprüft, ob ein Inhalt doppelt vorkommt und dies entsprechend ausgibt. 
 <br>
 <br>
 

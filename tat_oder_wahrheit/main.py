@@ -20,18 +20,6 @@ def spiel_beginnen():
     return render_template("tat_oder_wahrheit.html", seitentitel="Tat oder Wahrheit")
 
 
-@app.route("/statistik")
-def statistik():
-    taten = daten.elements()
-
-    x = "Markus", "Hans", "Lisa", "Kevin", "Sarah", "Linda"
-    y = 5, 4, 9, 13, 1, 7
-    fig = px.bar(x=x, y=y)
-    div = plot(fig, output_type="div")
-
-    return render_template("statistic.html", barchart=div, liste=taten, seitentitel="Statistik")
-
-
 @app.route("/tat")
 def tat():
     taten = daten.taten_laden()
@@ -70,7 +58,7 @@ def wahrheit_hinzufügen():
         return redirect(url_for("wahrheit_hinzufügen"))
 
 
-@app.route("/viz")
+@app.route("/viz") # Seite, welche anzeigt, ob eine Tat oder Wahrheit doppelt vorhanden ist.
 def grafik():
     taten = daten.taten_laden_liste()
     elements = daten.elements()
@@ -79,12 +67,13 @@ def grafik():
         if tat not in inhalt:
             inhalt[tat] = 1
         else:
-            inhalt[tat] += 1
+            inhalt[tat] += 1 # Funktion nimmt Inhalte aus Liste und setzt 1 als Standardwert. Sollte Inhalt nochmals
+            # vorkommen, wird eine 1 hinzugefügt, was Wert 2 ergibt und somit entsprechend in Grafik angezeigt wird.
 
-    x = inhalt.values()
-    y = inhalt.keys()
+    x = inhalt.keys()
+    y = inhalt.values()
 
-    fig = px.line(x=x, y=y)
+    fig = px.bar(x=x, y=y)
     div = plot(fig, output_type="div")
 
     wahrheiten = daten.wahrheiten_laden_liste()
@@ -96,10 +85,10 @@ def grafik():
         else:
             inhalt2[wahrheit] += 1
 
-    x = inhalt2.values()
-    y = inhalt2.keys()
+    x = inhalt2.keys()
+    y = inhalt2.values()
 
-    fig = px.line(x=x, y=y)
+    fig = px.bar(x=x, y=y)
     div2 = plot(fig, output_type="div")
 
     return render_template("viz.html", barchart=div, barchart2=div2, liste=elements, liste2=elements2, seitentitel="Piechart")
