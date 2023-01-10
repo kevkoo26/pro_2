@@ -11,7 +11,7 @@
         <input type="text" class="form-control" name="tat_hinzufügen" placeholder="Tat hier eingeben">
       </div>
         <br>
-      <button type="submit" class="btn btn-secondary">Tat hinzufügen</button>
+      <button type="submit" class="btn btn-outline-danger">Tat hinzufügen</button>
         <br>
         <br>
         <a href="{{ url_for('tat') }}" type="button" class="btn btn-primary">Spiel starten</a>
@@ -23,15 +23,33 @@
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img src="https://images.unsplash.com/photo-1641842073407-500aac63708f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80" class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">
       </div>
+        <div>
         <h2>
-            Aktuelle Liste der Taten:
+            Momentan sind <span class="text-danger">{{number_of_taten}}</span> Taten vorhanden.
         </h2>
-        <br> <!--Dank diesem "for eintrag in liste" werden die einzelnen Taten angezeigt-->
+        </div>
+
+        <div>
+        <h4>
+            <br>
+            Aktuelle Liste der Taten:
+        </h4>
+
+        <br>
         {% for eintrag in liste %}
+
         <ul>
             <li class="list-group-item">- {{eintrag}}</li>
+            <form method="POST", action="{{url_for('loeschen')}}">
+            <input type="hidden" class="form-control" name="tat_löschen" value="{{eintrag}}">
+            <button type="submit" class="btn btn-outline-secondary">Eintrag löschen</button>
+
+        </form>
         </ul>
+
         {% endfor %}
+
+        </div>
     </div>
   </div>
 

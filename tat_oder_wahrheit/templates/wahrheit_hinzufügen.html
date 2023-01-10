@@ -14,7 +14,7 @@
         <input type="text" class="form-control" name="wahrheit_hinzufügen" placeholder="Wahrheitsfrage hier eingeben">
       </div>
         <br>
-      <button type="submit" class="btn btn-secondary">Wahrheit hinzufügen</button>
+      <button type="submit" class="btn btn-outline-success">Wahrheit hinzufügen</button>
         <br>
         <br>
         <a href="{{ url_for('wahrheit') }}" type="button" class="btn btn-primary">Spiel starten</a>
@@ -28,16 +28,31 @@
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img src="https://images.unsplash.com/photo-1583443920098-6b56d6aabdb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">
       </div>
+        <div>
         <h2>
-            Aktuelle Liste der Wahrheiten:
+            Momentan sind <span class="text-success">{{number_of_wahrheiten}}</span> Wahrheiten vorhanden.
         </h2>
+        </div>
+
+        <div>
+        <h4>
+            <br>
+            Aktuelle Liste der Wahrheiten:
+        </h4>
 
         <br>
         {% for eintrag in liste %}
+
         <ul>
             <li class="list-group-item">- {{eintrag}}</li>
+            <form method="POST", action="{{url_for('loeschen')}}">
+            <input type="hidden" class="form-control" name="wahrheit_löschen" value="{{eintrag}}">
+            <button type="submit" class="btn btn-outline-secondary">Eintrag löschen</button>
+        </form>
         </ul>
         {% endfor %}
+
+        </div>
     </div>
   </div>
 

@@ -23,7 +23,8 @@ def taten_laden():
 def taten_laden_liste():
     taten = auslesen_taten()
     taten_liste = taten.split("\n")
-    taten_liste = reversed(taten_liste)  # Die Liste wird dadurch verkehrt ausgegeben, die neusten Inhalte ganz oben.
+    taten_liste = list(
+        reversed(taten_liste))  # Die Liste wird dadurch verkehrt ausgegeben, die neusten Inhalte ganz oben.
     return taten_liste
 
 
@@ -55,7 +56,7 @@ def wahrheiten_laden():
 def wahrheiten_laden_liste():
     wahrheiten = auslesen_wahrheiten()
     wahrheiten_liste = wahrheiten.split("\n")
-    wahrheiten_liste = reversed(wahrheiten_liste)
+    #wahrheiten_liste = list(reversed(wahrheiten_liste))
     return wahrheiten_liste
 
 
@@ -66,8 +67,20 @@ def abspeichern_wahrheit(eigene_wahrheit):
         open_file.write(new_content)
 
 
-# zum Zählen wie viele einzelne Taten oder Wahrheiten vorhanden sind.
-def elements():
-    inhalt = wahrheiten_laden()
-    anzahl = len(inhalt)
-    return str(anzahl)
+def eintrag_loeschen(text, listen_name):
+    if listen_name == "wahrheit":
+        inhalt = wahrheiten_laden_liste()
+        index = inhalt.index(text)
+        del inhalt[index]
+        inhalt = inhalt[:]
+        with open("wahrheiten.csv", "w") as open_file:
+            for line in inhalt:
+                open_file.write(line + "\n")
+    if listen_name == "tat":
+        inhalt = taten_laden_liste()
+        index = inhalt.index(text)
+        del inhalt[index]
+        inhalt = inhalt[:-1]
+        with open("taten.csv", "w") as open_file:
+            for line in inhalt:
+                open_file.write(line + "\n")
