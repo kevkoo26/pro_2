@@ -76,6 +76,8 @@ def eintrag_loeschen(text, listen_name):  # Um Einträge aus der Liste zu entfer
         with open("wahrheiten.csv", "w") as open_file:
             for line in inhalt: #die "neue" Liste soll wieder angezeigt werden.
                 open_file.write(line + "\n")
+                if line in inhalt == "":
+                    del line
     if listen_name == "tat":
         inhalt = taten_laden_liste()
         index = inhalt.index(text)
