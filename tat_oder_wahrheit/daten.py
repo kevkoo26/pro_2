@@ -56,7 +56,7 @@ def wahrheiten_laden():
 def wahrheiten_laden_liste():
     wahrheiten = auslesen_wahrheiten()
     wahrheiten_liste = wahrheiten.split("\n")
-    #wahrheiten_liste = list(reversed(wahrheiten_liste))
+    # wahrheiten_liste = list(reversed(wahrheiten_liste))
     return wahrheiten_liste
 
 
@@ -67,14 +67,14 @@ def abspeichern_wahrheit(eigene_wahrheit):
         open_file.write(new_content)
 
 
-def eintrag_loeschen(text, listen_name):
+def eintrag_loeschen(text, listen_name):  # Um Einträge aus der Liste zu entfernen
     if listen_name == "wahrheit":
         inhalt = wahrheiten_laden_liste()
-        index = inhalt.index(text)
-        del inhalt[index]
-        inhalt = inhalt[:]
+        index = inhalt.index(text)  # es wird der Ort gesucht, an welchem sich das zu löschende Element befindet. Dieses wird anschliessend als Index deklariert.
+        del inhalt[index]  # das Element Index und somit der gewünschte Inhalt wird aus der Liste entfernt.
+        inhalt = inhalt[:-1]  # die Liste soll nun vom erstem bis letzten Element wieder alles erneut anzeigen.
         with open("wahrheiten.csv", "w") as open_file:
-            for line in inhalt:
+            for line in inhalt: #die "neue" Liste soll wieder angezeigt werden.
                 open_file.write(line + "\n")
     if listen_name == "tat":
         inhalt = taten_laden_liste()

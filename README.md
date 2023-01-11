@@ -42,6 +42,8 @@ Mein "Tat oder Wahrheit"-Spiel bietet die Funktion, und dadurch
 einen bedeutenden Mehrwert, dass man selbst weitere Taten und
 Wahrheiten hinzufügen kann. Dadurch kann man das Spiel auch in Zukunft
 spannend gestalten und stets mit aktuellen Fragen und Aufgaben weiterentwickeln.
+
+Zusätzlich kann man Taten und Wahrheiten, welche nicht mehr im Spiel vorhanden sein sollten, aus der Liste entfernen. 
 <br>
 <br>
 
@@ -72,7 +74,8 @@ sogar eine eigene, hinzugefügte ist.
 
 Des weiteren verfügt das Programm über eine Funktion, über welche man erkennen kan, ob die neue Tat oder Wahrheit,
 welche man selbst hinzugefügt hat, bereits vorhanden ist. Sollte im Tab "Datenbank" der Balken bis zur Nummer 2 gelangen,
-so ist diese Tat oder Wahrheit doppelt vorhanden.
+so ist diese Tat oder Wahrheit doppelt vorhanden. Falls man einen Inhalt aus einer der zwei Liten löschen möchte, ist dies
+ebenfalls möglich. 
 <br>
 <br>
 
@@ -96,9 +99,8 @@ als neuer Punkt in einem neuen Absatz hinzugefügt wird.
 Durch eine weitere Funktion werden unter dem Formular für die Eingabe
 neuer Taten oder Wahrheiten sämtliche Inhalte aus der Liste angezeigt,
 sodass man immer sehen kann, welche Taten oder Wahrheiten bereits
-vorhanden sind. Die Liste wurde absichtlich in umgekehrter Reihenfolge
-angezeigt, damit man bei Eingabe einer eigenen Liste den neuen Inhalt
-zuoberst angezeigt erhält. 
+vorhanden sind. In dieser Liste ist es ebenfalls möglich, bereits vorhandene Taten und Wahrheiten
+aus der Liste zu entfernen, falls man diese in Zukunft nicht mehr im Spiel haben möchte.
 
 Im Abschnitt Datenbank kann man zusätzlich kontrollieren, ob gewisse Taten oder Wahrheiten doppelt vorhanden sind.
 Dies funktioniert indem die Liste überprüft, ob ein Inhalt doppelt vorkommt und dies entsprechend ausgibt. 
@@ -107,10 +109,9 @@ Dies funktioniert indem die Liste überprüft, ob ein Inhalt doppelt vorkommt un
 
 ## Ungelöste/unbearbeitete Probleme
 #### Was wurde nicht gelöst?
-Ein Punkt, welcher nicht gelöst werden konnte, ist, dass man Inhalt
-aus der Liste mithilfe eines Buttons o.ä. wieder aus der Liste entfernen
-kann. Diese hätte der Vorteil, dass man falsch eingegebene oder bereits vorhandene
-Taten und Wahrheiten wieder löschen könnte. 
+Ein Punkt, welcher nicht gelöst werden konnte, ist, dass man zwar Inhalte aus der Liste
+gelöscht werden können, jedoch ein Schönheitsfehler vorhanden ist und dadurch eine leere Zeile in der
+Liste und somit im Spiel gespeichert wird.
 
 Der weiteren wäre es spannend, Spieler mit Namen hinzuzufügen und diesen
 Punkte für die erledigten Taten und Wahrheiten zu verteilen. Hier war jedoch

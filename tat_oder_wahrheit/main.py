@@ -65,7 +65,7 @@ def wahrheit_hinzufügen():
 def loeschen():
     if "tat_löschen" in request.form:
         item = request.form['tat_löschen']
-        daten.eintrag_loeschen(item, "tat")
+        daten.eintrag_loeschen(item, "tat") #Formular, welches via Butten das gewünschte Element aus der Liste löscht.
         return redirect(url_for("tat_hinzufügen"))
     if "wahrheit_löschen" in request.form:
         item = request.form['wahrheit_löschen']
