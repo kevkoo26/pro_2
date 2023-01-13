@@ -9,8 +9,8 @@ from tat_oder_wahrheit.daten import abspeichern_tat, abspeichern_wahrheit
 app = Flask("Tat oder Wahrheit")
 
 
-@app.route("/")
-def start():
+@app.route("/") #zeigt Browserverpfadung an
+def start(): #Funktionsname
     return render_template("index.html", seitentitel="Start")
 
 
@@ -26,18 +26,17 @@ def tat():
 
 
 @app.route("/tat_hinzufügen/", methods=['GET', 'POST'])
-def tat_hinzufügen():
+def tat_hinzufügen(): #GET --> Diese Daten sollen bei dieser Seite "abgeholt" werden
     if request.method == "GET":  # eigene Taten, die hinzugefügt wurden, werden hier abgeholt und angezeigt in Liste.
         auflistung = daten.taten_laden_liste()
-        number_of_taten = len(auflistung)
+        number_of_taten = len(auflistung) #Länge der Liste (somit Anzahl Taten) werden angezeigt
         return render_template("tat_hinzufügen.html", liste=auflistung, number_of_taten=number_of_taten,
                                seitentitel="Tat eingeben")
 
-    if request.method == 'POST':  # Formular, welches die eingegebenen Taten abholt --> Eingaben werden abgespeichert.
-        eigene_tat = request.form['tat_hinzufügen']
-        print(f"Request Form Tat hinzufügen: {eigene_tat}")
+    if request.method == 'POST':  # Post--> Eingegebene Daten werden so abgespeichert, Formular, welches die eingegebenen Taten abholt --> Eingaben werden abgespeichert.
+        eigene_tat = request.form['tat_hinzufügen'] #Ruft das gewünschte Formular auf
         abspeichern_tat(eigene_tat)
-        return redirect(url_for("tat_hinzufügen"))
+        return redirect(url_for("tat_hinzufügen")) #Führt wieder zurück auf Seite "Tat hinzufügen
 
 
 @app.route("/wahrheit")
@@ -50,20 +49,19 @@ def wahrheit():
 def wahrheit_hinzufügen():
     if request.method == "GET":  # eigene Wahrheiten, die hinzugefügt wurden, werden hier abgeholt und angezeigt in Liste.
         auflistung = daten.wahrheiten_laden_liste()
-        number_of_wahrheiten = len(auflistung)
+        number_of_wahrheiten = len(auflistung)  #Länge der Liste (somit Anzahl Taten) werden angezeigt
         return render_template("wahrheit_hinzufügen.html", liste=auflistung, number_of_wahrheiten=number_of_wahrheiten,
                                seitentitel="Wahrheit eingeben")
 
     if request.method == 'POST':  # Formular, welches die eingegebenen Wahrheiten abholt --> Eingaben werden abgespeichert.
         eigene_wahrheit = request.form['wahrheit_hinzufügen']
-        print(f"Request Form Wahrheit hinzufügen: {eigene_wahrheit}")
         abspeichern_wahrheit(eigene_wahrheit)
         return redirect(url_for("wahrheit_hinzufügen"))
 
 
 @app.route("/loeschen", methods=["GET", "POST"])
 def loeschen():
-    if "tat_löschen" in request.form:
+    if "tat_löschen" in request.form: #wenn das Formular "tat_löschen" gewählt wird...
         item = request.form['tat_löschen']
         daten.eintrag_loeschen(item, "tat") #Formular, welches via Butten das gewünschte Element aus der Liste löscht.
         return redirect(url_for("tat_hinzufügen"))

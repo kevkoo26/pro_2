@@ -59,23 +59,23 @@ spielen möchte, ist man nur wenige Klicks davon entfernt. Nach der Auswahl,
 dass man ein neues Spiel beginnen möchte, kann man gleich die Entscheidung
 treffen, ob die erste Frage eine Tat oder eine Wahrheit sein sollte.
 Anschliessend wird gleich die erste Frage oder Aufgabe angezeigt. Sobald diese beantwortet
-oder erledigt wurde, kann man erneut auswählen, was als nächstes kommt, Tat oder
+oder erledigt wurde, kann man erneut auswählen, was als Nächstes kommt, Tat oder
 Wahrheit. Und so geht das Spiel immer weiter. 
 <br>
 <br>
 
 #### Welche Optionen oder auch Spezialitäten existieren
-Das Einzigartige an diesem Programm ist, dass man selbstständig neue, eigene
+Das Einzigartige an diesem Programm ist, dass man selbstständig eigene, neue 
 Aufgaben oder Fragen hinzufügen kann, welche dann automatisch in das
 Spiel eingeschlossen werden. Die Fragen oder Aufgaben kommen mit einer
-randon-Funktion, sprich, sie werden willkürlich ausgewählt. Somit weiss
-man nie, welche Aufgabe oder Frage als nächstes kommt und ob es vielleicht
+randon-Funktion, sprich, sie werden willkürlich ausgewählt. Somit ist nie bekannt, 
+welche Aufgabe oder Frage als Nächstes kommt und ob es vielleicht
 sogar eine eigene, hinzugefügte ist. 
 
-Des weiteren verfügt das Programm über eine Funktion, über welche man erkennen kan, ob die neue Tat oder Wahrheit,
+Des Weiteren verfügt das Programm über eine Funktion, über welche man erkennen kan, ob die neue Tat oder Wahrheit,
 welche man selbst hinzugefügt hat, bereits vorhanden ist. Sollte im Tab "Datenbank" der Balken bis zur Nummer 2 gelangen,
 so ist diese Tat oder Wahrheit doppelt vorhanden. Falls man einen Inhalt aus einer der zwei Liten löschen möchte, ist dies
-ebenfalls möglich. 
+ebenfalls über einen Button möglich. 
 <br>
 <br>
 
@@ -99,21 +99,23 @@ als neuer Punkt in einem neuen Absatz hinzugefügt wird.
 Durch eine weitere Funktion werden unter dem Formular für die Eingabe
 neuer Taten oder Wahrheiten sämtliche Inhalte aus der Liste angezeigt,
 sodass man immer sehen kann, welche Taten oder Wahrheiten bereits
-vorhanden sind. In dieser Liste ist es ebenfalls möglich, bereits vorhandene Taten und Wahrheiten
+vorhanden sind. Zusätzlich wird gleich angezeigt, was die totale Anzahl an vorhanden Taten oder Wahrheiten in der
+Datenbank ist. In dieser Liste ist es ebenfalls möglich, bereits vorhandene Taten und Wahrheiten
 aus der Liste zu entfernen, falls man diese in Zukunft nicht mehr im Spiel haben möchte.
 
 Im Abschnitt Datenbank kann man zusätzlich kontrollieren, ob gewisse Taten oder Wahrheiten doppelt vorhanden sind.
-Dies funktioniert indem die Liste überprüft, ob ein Inhalt doppelt vorkommt und dies entsprechend ausgibt. 
+Dies funktioniert, indem die Liste überprüft, ob ein Inhalt doppelt vorkommt und dies entsprechend ausgibt. 
 <br>
 <br>
 
 ## Ungelöste/unbearbeitete Probleme
 #### Was wurde nicht gelöst?
-Ein Punkt, welcher nicht gelöst werden konnte, ist, dass man zwar Inhalte aus der Liste
+Ein Punkt, welcher nicht gelöst werden konnte, ist, dass man zwar Inhalte aus den Listen
 gelöscht werden können, jedoch ein Schönheitsfehler vorhanden ist und dadurch eine leere Zeile in der
-Liste und somit im Spiel gespeichert wird.
+Liste und somit im Spiel und der Liste gespeichert wird. Zusätzlich wird beim Löschen des ersten Eintrages gleich 
+zwei Einträge gelöscht. 
 
-Der weiteren wäre es spannend, Spieler mit Namen hinzuzufügen und diesen
+Der weiteren wäre es spannend, Spieler mit Namen hinzuzufügen und diesen Spielern
 Punkte für die erledigten Taten und Wahrheiten zu verteilen. Hier war jedoch
 das Problem, dass ich diese Struktur, wie bereits beim Jass- oder
 Kartenspielrechner gewünscht, nicht erstellen und somit nicht umgesetzt werden
@@ -125,5 +127,5 @@ konnte.
 Im Spiel ist beim Wechsel von Taten zu Wahrheiten oder
 andersrum eine kurze Verzögerung vorhanden, da diese neue Seite und somit
 die andere Liste geladen werden muss. Dieser Fehler könnte evtl. durch
-den Einsatz eines Dict oder die Implementierung von unterschiedlichen Listen
+den Einsatz eines Dict oder das Zusammenführen von unterschiedlichen Listen
 auf der gleichen Seite behoben werden. 

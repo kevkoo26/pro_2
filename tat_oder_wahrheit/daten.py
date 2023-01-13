@@ -23,14 +23,12 @@ def taten_laden():
 def taten_laden_liste():
     taten = auslesen_taten()
     taten_liste = taten.split("\n")
-    taten_liste = list(
-        reversed(taten_liste))  # Die Liste wird dadurch verkehrt ausgegeben, die neusten Inhalte ganz oben.
     return taten_liste
 
 
 def abspeichern_tat(eigene_tat):
     current_content = auslesen_taten()
-    new_content = current_content + f"\n{eigene_tat}"
+    new_content = current_content + f"\n{eigene_tat}" #der Neue Content soll auf einer neuen Zeile geschrieben werden
     with open("taten.csv", "w") as open_file:
         open_file.write(new_content)
 
@@ -56,7 +54,6 @@ def wahrheiten_laden():
 def wahrheiten_laden_liste():
     wahrheiten = auslesen_wahrheiten()
     wahrheiten_liste = wahrheiten.split("\n")
-    # wahrheiten_liste = list(reversed(wahrheiten_liste))
     return wahrheiten_liste
 
 
